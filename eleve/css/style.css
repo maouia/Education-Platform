@@ -1,0 +1,54 @@
+
+.center{
+  margin-top: 6%;
+  margin-left: 20px;
+  margin-right: 20px;
+  
+  display: flex;
+  flex-wrap: wrap;
+ }
+ 
+ 
+ .center2{
+  
+   margin-left: 20px;
+   margin-right: 20px;
+   
+   display: flex;
+   flex-wrap: wrap;
+ }
+ .all{
+     width: 100%;
+ }
+ 
+ 
+ .square {
+   margin-left: 20px;
+   margin-top: 10%;
+     height: 250px;
+     width: 250px;
+     border-radius: 5px;
+     border: 0.5px solid #000000;
+     
+   }
+   .top{
+     margin-top: 15px ;
+     margin-left: 20px ;
+     width: auto;
+     border-radius: 20px;
+     border: 1px solid hidden;
+     height: 30%;
+  
+ 
+ 
+   }
+ 
+   .row {
+     width: 100%;
+ 
+     display: flex;
+      /* for centering 3 blocks in the center */
+     /* justify-content: space-between; for space in between */ 
+   }
+ 
+   

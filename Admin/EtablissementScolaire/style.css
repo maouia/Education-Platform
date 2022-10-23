@@ -1,0 +1,104 @@
+#grid-container {
+  display: grid;
+  grid-gap: 5px 10px;
+  grid-template-columns: 100%;
+  background-color: #eff3f7;
+  padding: 10px;
+  margin-top: 80px;
+  position: relative;
+}
+
+#grid-container-list {
+  display: grid;
+  grid-gap: 5px 10px;
+  grid-template-columns: 100%;
+  background-color: #eff3f7;
+  padding: 10px;
+  margin-top: 10px;
+  position: relative;
+}
+
+#grid-container-list > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  margin: 5px;
+  size: 100px;
+}
+.godown {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  margin: 5px;
+  size: 100px;
+}
+p {
+  font-family: sans-serif;
+  font-style: oblique;
+  font-size: medium;
+  text-align: left;
+}
+
+.ESname {
+  font-family: fantasy;
+  text-align: Center;
+  margin-bottom: 15px;
+}
+
+.header_grid {
+  display: flex;
+}
+.Coursdesc {
+  text-align: left;
+  margin-left: auto;
+}
+
+.Cours {
+  text-align: left;
+}
+
+.desc {
+  size: 80px;
+}
+
+.logo {
+  width: 150px;
+  text-align: right;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.logo_Enseigiant {
+  width: 150px;
+  text-align: right;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.Enseignant {
+  display: flex;
+}
+
+.nbrEnseignant {
+  margin-right: 20px;
+}
+.logo_ES {
+  width: 250px;
+
+  text-align: right;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#form {
+  margin-top: 20px;
+}

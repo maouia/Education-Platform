@@ -1,0 +1,58 @@
+#grid-container {
+  display: grid;
+  grid-gap: 5px 10px;
+  grid-template-columns: 33% 33% 33%;
+  background-color: #f7f2f2;
+  padding: 10px;
+  margin-top: 80px;
+  position: relative;
+}
+.godown {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  margin: 5px;
+  size: 100px;
+}
+p {
+  font-family: sans-serif;
+  font-style: oblique;
+  font-size: medium;
+  text-align: left;
+  text-align: right;
+}
+
+.Coursname {
+  font-family: fantasy;
+  text-align: Center;
+  margin-bottom: 10px;
+}
+
+.header_grid {
+  display: flex;
+}
+.Coursdesc {
+  text-align: left;
+}
+
+.Cours {
+  text-align: left;
+}
+
+.desc {
+  size: 80px;
+  text-align: center;
+}
+
+img {
+  width: 150px;
+  text-align: right;
+}

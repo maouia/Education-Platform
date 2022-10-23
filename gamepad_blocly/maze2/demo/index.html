@@ -1,0 +1,315 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>ُEduBlock</title>
+
+    <link rel="icon" href="../docs/icons/favicon/icon.svg">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- CSS only -->
+
+    <!-- import bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--Blockly-->
+    <script src="../libs/blockly/blockly_compressed.js"></script>
+    <script src="../libs/blockly/blocks_compressed.js"></script>
+    <script src="../libs/blockly/javascript_compressed.js"></script>
+    <script src="../libs/blockly/en.js"></script>
+
+    <!--blockly-gamepad-->
+    <script src="../libs/gamepad/gamepad.min.js"></script>
+    <script src="../../win/redect.js"></script>
+</head>
+
+<body>
+    <header>
+        <!--title-->
+        <span class="title">
+            <div>
+                <a  onclick="rederect();">العودة للصفحة الرئيسية</a> 
+            </div>
+        </span>
+        <vr></vr>
+    
+        <!--categories switch-->
+        <span class="switch_span">التقسيم</span>
+        <label class="switch">
+            <input id="categories_check" type="checkbox">
+            <span class="slider round"></span>
+        </label>
+        <vr></vr>
+        <!--level buttons-->
+        <span class="switch_span">المستوايات</span>
+        <button class="button level" id="level_1">1</button>
+        <button class="button level" id="level_2">2</button>
+        <button class="button level" id="level_3">3</button>
+        <button class="button level" id="level_4">4</button>
+        <button class="button level" id="level_5">5</button>
+        <vr></vr>
+         <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            الموضوع
+        </button>
+    </header>
+
+    <main>
+        <!--game div-->
+        <div id="game-div">
+            <!--game 1-->
+            <svg xmlns="http://www.w3.org/2000/svg" style="display: none" version="1.1" id="1" width="400px"
+                height="400px" viewBox="0 0 400 400">
+                <image xlink:href="images/maze1.png" class="maze" x="0" y="-1" width="400" height="399"></image>
+                <clipPath id="pegmanClipPath1">
+                    <rect id="clipRect1" width="49" height="52" x="101" y="191"></rect>
+                </clipPath>
+                <image id="pegman1" xlink:href="images/pegman.png" height="52" width="1029"
+                    clip-path="url(#pegmanClipPath1)" x="-95" y="191" transform="rotate(0, 0, 0)"></image>
+            </svg>
+            <!--game 2-->
+            <svg xmlns="http://www.w3.org/2000/svg" style="display: none" version="1.1" id="2" width="400px"
+                height="400px" viewBox="0 0 400 400">
+                <image xlink:href="images/maze2.png" class="maze" x="0" y="0" width="400" height="400"></image>
+                <clipPath id="2pegmanClipPath">
+                    <rect id="clipRect2" width="49" height="52" x="51" y="291"></rect>
+                </clipPath>
+                <image id="pegman2" xlink:href="images/pegman.png" height="52" width="1029"
+                    clip-path="url(#2pegmanClipPath)" x="-145" y="291" transform="rotate(0, 0, 0)"></image>
+            </svg>
+            <!--game 3-->
+            <svg xmlns="http://www.w3.org/2000/svg" style="display: none" version="1.1" id="3" width="400px"
+                height="400px" viewBox="0 0 400 400">
+                <image xlink:href="images/maze3.png" class="maze" x="0" y="0" width="400" height="400"></image>
+                <clipPath id="3pegmanClipPath">
+                    <rect id="clipRect3" width="49" height="52" x="51" y="291"></rect>
+                </clipPath>
+                <image id="pegman3" xlink:href="images/pegman.png" height="52" width="1029"
+                    clip-path="url(#3pegmanClipPath)" x="-145" y="291" transform="rotate(0, 0, 0)"></image>
+            </svg>
+            <!--game 4-->
+            <svg xmlns="http://www.w3.org/2000/svg" style="display: none" version="1.1" id="4" width="400px"
+                height="400px" viewBox="0 0 400 400">
+                <image xlink:href="images/maze4.png" class="maze" x="0" y="0" width="400" height="400"></image>
+                <clipPath id="4pegmanClipPath">
+                    <rect id="clipRect4" width="49" height="52" x="51" y="291"></rect>
+                </clipPath>
+                <image id="pegman4" xlink:href="images/pegman.png" height="52" width="1029"
+                    clip-path="url(#4pegmanClipPath)" x="-95" y="191" transform="rotate(0, 0, 0)"></image>
+            </svg>
+            <!--game 5-->
+            <svg xmlns="http://www.w3.org/2000/svg" style="display: none" version="1.1" id="5" width="400px"
+                height="400px" viewBox="0 0 400 400">
+                <image xlink:href="images/maze5.png" class="maze" x="0" y="0" width="400" height="400"></image>
+                <!--<image id="finish2" xlink:href="images/marker.png" height="34" width="20" x="215" y="46"></image>-->
+                <clipPath id="5pegmanClipPath">
+                    <rect id="clipRect5" width="49" height="52" x="51" y="291"></rect>
+                </clipPath>
+                <image id="pegman5" xlink:href="images/pegman.png" height="52" width="1029"
+                    clip-path="url(#5pegmanClipPath)" x="-145" y="291" transform="rotate(0, 0, 0)"></image>
+            </svg>
+
+            <!--capacity div-->
+            <div id="capacity" style="display: none;">You have <span id="capacityNumber">10</span> blocks left.</div>
+            <!--buttons-->
+            <div class="buttons">
+                <button id="play" class="button green" style="grid-area: 1 ">البدء</button>
+                <button id="pause" class="button green" style="grid-area: 2">ايقاف</button>
+                <hr>
+                <button id="forward" class="button blue" style="grid-area: 2">الى الامام</button>
+                <button id="backward" class="button blue" style="grid-area: 3">الى الخلف</button>
+                <hr>
+                <button id="load" class="button violet" style="grid-area: 1"> &nbsp;تسجيل&ensp;</button>
+            </div>
+        </div>
+        <!--workspace div-->
+        <div id="blockly-editor">
+            <div id="blockly-div"></div>
+            <!--toolbox without categories-->
+            <xml id="toolbox" style="display: none">
+                <block type="move"></block>
+                <block type="jump"></block>
+                <block type="turn"></block>
+                <block type="turn">
+                    <field name="DIRECTION">3</field>
+                </block>
+                <block type="repeat_until"></block>
+                <block type="if_path"></block>
+                <block type="if_else_path"></block>
+            </xml>
+            <!--toolbox whit categories-->
+            <xml id="toolbox_c" style="display: none">
+                <category name="Controls" colour="285">
+                    <block type="move"></block>
+                    <block type="turn"></block>
+                    <block type="turn">
+                        <field name="DIRECTION">3</field>
+                    </block>
+                </category>
+                <category name="Logic" colour="120">
+                    <block type="repeat_until"></block>
+                    <block type="if_path"></block>
+                    <block type="if_else_path"></block>
+                </category>
+            </xml>
+        </div>
+    </main>
+    
+    
+    <!--load global parameters-->
+    <script>
+        // get parameters in url
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        // global vars
+        let {
+            start,
+            categories,
+            id
+        } = getUrlVars()
+
+        // update parameters
+        start = start != undefined
+        categories = categories != undefined
+        //iniialisation de stage
+        /*if(sessionStorage.getItem("level") == undefined) 
+            id = 0
+        else
+            id = sessionStorage.getItem("level");*/
+
+        // update the checkers
+        if (start) document.getElementById('start_check').checked = true
+        if (categories) document.getElementById('categories_check').checked = true
+
+        // set the toolbox
+        const toolbox = document.getElementById(categories ? 'toolbox_c' : 'toolbox')
+    </script>
+
+    <!--scripts-->
+    <script src="js/levels.js"></script>
+    <script src="js/gui.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/index.js"></script>
+   
+    
+
+    <!--link event to buttons-->
+    <script>
+        // link the buttons
+        document.getElementById('load').onclick = () => game.loadCode() + console.clear()
+        document.getElementById('level_1').onclick = () => game.loadLevel(levels[id = 0]) + console.clear() + sessionStorage.setItem("level",0) 
+        document.getElementById('level_2').onclick = () => game.loadLevel(levels[id = 1]) + console.clear() + sessionStorage.setItem("level",1) 
+        document.getElementById('level_3').onclick = () => game.loadLevel(levels[id = 2]) + console.clear() + sessionStorage.setItem("level",2) 
+        document.getElementById('level_4').onclick = () => game.loadLevel(levels[id = 3]) + console.clear() + sessionStorage.setItem("level",3) 
+        document.getElementById('level_5').onclick = () => game.loadLevel(levels[id = 4]) + console.clear() + sessionStorage.setItem("level",4) 
+        // on load run the first time
+        window.onload =() => game.loadLevel(levels[id = sessionStorage.getItem("level")]);
+        if(sessionStorage.getItem("level") == undefined) 
+             id = game.loadLevel(levels[id = 0])
+
+        document.getElementById('forward').onclick = () => gamepad.forward() + gui.removeAnimation()
+        document.getElementById('backward').onclick = () => gamepad.backward() + gui.removeAnimation()
+        document.getElementById('play').onclick = () => gamepad.play()
+        document.getElementById('pause').onclick = () => gamepad.pause()
+    </script>
+
+    <!--remaining block-->
+    <script>
+        // update remaining block
+        Blockly.getMainWorkspace().addChangeListener(() => {
+            let capacity = Blockly.getMainWorkspace().remainingCapacity()
+            if (capacity != Infinity) {
+                // show capacity div
+                document.getElementById('capacity').style.display = 'block'
+                document.getElementById('capacityNumber').innerHTML = capacity
+            } else {
+                // hide capacity div
+                document.getElementById('capacity').style.display = 'none'
+            }
+        })
+    </script>
+
+    <!--navigation-->
+    <script>
+        // get the url
+        const getUrl = (start, categories) => {
+            let url = []
+
+            if (start) url.push('start=true')
+            if (categories) url.push('categories=true')
+            url.push('id=' + (id + 1))
+
+            return 'index.html?' + url.join('&')
+        }
+
+        // add handlers
+        document.getElementById('start_check').onclick =
+            (event) => window.location.href = getUrl(event.target.checked, categories)
+
+        document.getElementById('categories_check').onclick =
+            (event) => window.location.href = getUrl(start, event.target.checked)
+
+        // show capacity div
+        if (id == 2) document.getElementById('capacity').style.display = 'block'
+    </script>
+   
+    <!-- Button trigger modal -->
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Sujet</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div id="modal-img" class="modal-body">
+        <p id="textsujet" class="text-break"></p>
+          <img id="myImg"  alt="sujet" width="400">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <!-- Modal you win -->
+  <div class="modal fade" id="ModalYouWin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">لقد اجتزت التمرين بنجاح</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div id="modal-img" class="modal-body">
+        <p id="textsujet" class="text-break"></p>
+          <img id="myImg"  alt="sujet" width="400" src="../../win/win.gif">
+          <audio id="foobar" src="../../win/win.wav" preload="auto" style="display:none ;"> 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="rest()">اعادة</button>
+          <button id='btnsaveandGoToHomePage' type="button" class="btn btn-success" onclick="saveandGoToHomePage()" data-dismiss="modal">تسجيل و العودة للصفحة الرئيسية</button>
+          <button id='btnSaveAndPasse' type="button" class="btn btn-primary" onclick="saveandpasse()" data-dismiss="modal">التمرين التالي</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js" integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ" crossorigin="anonymous"></script>   
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script> 
+    <script src="../../../config.js"></script>
+    <script src="../../win/index.js"></script>
+  
+</html>

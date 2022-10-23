@@ -1,0 +1,137 @@
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title> My Games </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="mygames.css">
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-storage.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script> 
+		<script src="../../../../config.js" ></script>
+    <script src="main.js"></script>
+    <script src="../../blockstorage.js"></script>
+    <script src="./mygames.js" > </script>
+
+    <script type="text/javascript">
+      importDataFromFirebase();
+      importnbEtapes();
+    </script>
+  </head>
+  
+  <body id="body">
+
+      <!--<canvas id="canvas"></canvas> -->
+
+
+      <div id="navbar-container" >
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+			<div class="container-fluid">
+			  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			  </button>
+			  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+				<a class="navbar-brand" href="../../index.html">الصفحة الرئيسية</a>
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				  <li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="../mygames/mygames.html">الدورات المضافة</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="../cours/cours.html">اضافة الدورات</a>
+				  </li>
+				</ul>
+				<form class="d-flex m-0">
+				  <lu class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+							<div id="img_home"></div>
+						</li>
+					<li class="nav-item">
+					  <a  id="name" class="nav-link active" aria-current="page" href="./pages/profile.html"> </a>
+					</li>
+          <li class="nav-item ">
+            <a onclick="logout()" id="logout"  class="btn btn-danger" href="#">الخروج</a>
+          </li>
+					<li class="nav-item">
+					  <a id="login"  class="nav-link" href="./Firebase/login.html"></a>
+					</li>
+				  </lu>
+				</form>
+			  </div>
+			</div>
+		  </nav>
+      </div>
+      <div  id="affiche">
+        <p id='test'> يتم تحميل الدورات </p>
+      </div>
+
+</body>
+
+<script>
+
+  window.onload= add; 
+    auth.onAuthStateChanged(function(user) {
+            if (user) {
+                $("#login").hide();
+                $("#logout").show();
+                $("#name").show();
+                $("#test").hide();
+            }
+            else{
+              $("#Login").show();
+                $("#logout").hide();
+                $("#name").hide();
+                $("#test").show();
+            }
+        });     
+//setTimeout(function afterTwoSeconds(){
+
+
+//},1000);
+
+        function progress(){
+      //begin mzer1
+      for (var i=1 ; i<10 ; i++){
+        if(localStorage.getItem(i+"maze1")!=null){
+            $(".maze1"+i).css({ 'background': '#0fca73 ',  });
+            $(".maze1maze1"+i).css({ 'color': 'green', 'font-size': '120%'  });
+          }
+      }
+      //  maze
+            for (var i=1 ; i<10 ; i++){
+            if(localStorage.getItem(i+"maze")!=null){
+            $(".maze"+i).css({ 'background': '#0fca73 ',  });
+            $(".mazemaze"+i).css({ 'color': 'green', 'font-size': '120%'  });
+            }}
+      //maze2
+            for (var i=1 ; i<10 ; i++){
+              if(localStorage.getItem(i+"maze2")!=null){
+                  $(".maze2"+i).css({ 'background': '#0fca73 ',  });
+                  $(".maze2maze2"+i).css({ 'color': 'green', 'font-size': '120%'  });
+                }
+            }
+      //maze3
+      for (var i=1 ; i<10 ; i++){
+              if(localStorage.getItem(i+"maze3")!=null){
+                  $(".maze3"+i).css({ 'background': '#0fca73 ',  });
+                  $(".maze3maze3"+i).css({ 'color': 'green', 'font-size': '120%'  });
+                }
+            }
+      //maze3
+      for (var i=1 ; i<10 ; i++){
+              if(localStorage.getItem(i+"maze4")!=null){
+                  $(".maze4"+i).css({ 'background': '#0fca73 ',  });
+                  $(".maze4maze4"+i).css({ 'color': 'green', 'font-size': '120%'  });
+                }
+            }
+    }
+    </script>
+    
+  </html>

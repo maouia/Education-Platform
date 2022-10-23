@@ -1,0 +1,19 @@
+.img_home {
+  image-resolution: 20px;
+  object-fit: contain;
+  width: 150px;
+}
+.p {
+  font-size: 100px;
+}
+.img-fluid {
+  width: 100px;
+  object-fit: contain;
+  margin: 0 20px;
+  margin-top: 20px;
+  position: left;
+}
+
+.login_container {
+  margin-top: 70px;
+}
